@@ -1,0 +1,178 @@
+body {
+    padding-top: 50px;
+    padding-bottom: 30px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    background: #222222;
+}
+.navbar-brand .glyphicon {
+    margin-right: .5em;
+}
+#about-me{
+    position: relative;
+    font-family: 'Quicksand', sans-serif;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 16px;
+    padding-right: 16px;
+    padding-bottom: 16px;
+    background: #7AABFF;
+    background-image: url("http://www.transparenttextures.com/patterns/french-stucco.png");
+    box-shadow: 0 0 5px rgba(0,0,0,.5);
+    z-index: 10;
+
+}
+.about-me-img {
+    position: relative;
+    border-radius: 50%;
+    float: left;
+    margin-right: 2em;
+    border: solid 6px white;
+    box-shadow: 0 0 5px rgba(0,0,0,.5);
+    z-index: 1;
+}
+.about-me-text h1{
+    position: relative;
+    background-color: #A5843F;
+    background: linear-gradient(#A5843F 0%, #785a35 100%);
+    border: solid #bb9744 1px;
+    margin-bottom: 0;
+    margin-left: 50px;
+    margin-right: -16px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: white;
+    text-transform: uppercase;
+    border-top-right-radius:15px;
+    box-shadow: 0 1px 5px rgba(0,0,0,.5);
+    z-index: 0;
+}
+.about-me-text h1::after {
+    content: '';
+    position: absolute;
+    right: 0%; top: 100%;
+    z-index: -1;
+    border-right: 5px solid transparent;
+    border-left: 10px solid #59402c;
+    border-bottom: 5px solid transparent;
+    border-top: 3px solid #59402c;
+    box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+}
+.about-me-text p{
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #ffffff;
+    background-color: #94b6f3;
+    margin-left: 80px;
+    padding-top: 16px;
+    padding-right: 16px;
+    padding-left: 16px;
+    padding-bottom: 16px;
+    box-shadow: 1px 0 5px rgba(0,0,0,.5);
+    border-bottom-right-radius: 4px;
+}
+.about-me-text .about-me-link{
+    color: #1b3044;
+}
+#portfolio {
+    padding-top: 80px;
+    background: #826831 url("../images/cave_bg_fg.png") repeat;
+    background-size: 50px 50px;
+}
+.ribbon {
+    position: absolute;
+    right: 6px; top: -7px;
+    z-index: 3;
+    overflow: hidden;
+    width: 100px; height: 100px;
+    text-align: right;
+}
+.ribbon span {
+    font-size: 10px;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold; line-height: 20px;
+    transform: rotate(45deg);
+    width: 110px; display: block;
+    background: #79A70A;
+    background: linear-gradient(#9BC90D 0%, #79A70A 100%);
+    box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+    position: absolute;
+    top: 22px; right: -21px;
+}
+.ribbon span::before {
+    content: '';
+    position: absolute;
+    left: 0px; top: 100%;
+    z-index: -1;
+    border-left: 5px solid #79A70A;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-top: 5px solid #79A70A;
+}
+.ribbon span::after {
+    content: '';
+    position: absolute;
+    right: 0%; top: 100%;
+    z-index: -1;
+    border-right: 5px solid #79A70A;
+    border-left: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-top: 5px solid #79A70A;
+}
+.red span {
+    right: -21px;
+    background: linear-gradient(#F70505 0%, #8F0808 100%);
+}
+.red span::before {
+    border-left-color: #8F0808; border-top-color: #8F0808;
+}
+.red span::after {
+    border-right-color: #8F0808; border-top-color: #8F0808;
+}
+.badge-container {
+    position: relative;
+    z-index: 1;
+
+}
+.token-badge {
+    position: absolute;
+    display: block;
+    vertical-align: center;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 0px 5px rgba(0,0,0,.5);
+}
+
+.panel{
+    position:relative;
+    z-index: 2;
+    background: #826831 url("../images/cave_bg.png") repeat;
+    border-color:#F2C25C;
+    background-size: 50px 50px;;
+
+}
+.panel-default > .panel-heading {
+    background-color:#A5843F;
+    background: linear-gradient(#A5843F 0%, #785a35 100%);
+    border-color:#F2C25C;
+    color:#ffffff;
+}
+.list-group-item {
+    background-color: #F2DCA8;
+    border-color: #785a35;
+}
+.list-group-item.disabled{
+    color: #F2DCA8;
+    background-color: #4a3830 ;
+    border-color: #785a35;
+}
+.list-group-item span.badge-done {
+    background-color: #9BC90D;
+}
+#footer {
+    padding-top: 16px;
+    background-color: #222222;
+    color: #9d9d9d;
+}
