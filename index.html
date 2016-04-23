@@ -5,6 +5,7 @@
     <title>MATC Spring 2016 Andre Moraless Projects</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link href='http://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/index.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -14,22 +15,33 @@
     <![endif]-->
 </head>
 <body>
+
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
             <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-home"></span>MATC Spring 2016: Andre Morales</a>
         </div>
+        <div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="https://www.linkedin.com/in/famorales"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.facebook.com/andre.morales.7359"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a></li>
+                <li><a href="https://twitter.com/EmberStoneLLC"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a></li>
+                <li><a href="http://steamcommunity.com/profiles/76561197999345529/"><i class="fa fa-steam-square fa-2x" aria-hidden="true"></i></a></li>
+            </ul>
+        </div>
     </div>
 </nav>
+
 <section id="about-me">
     <div class="container">
         <div class="about-logo">
             <img class="about-me-img" src="images/nibz.jpg">
         </div>
         <div class="about-me-text">
-           <h1>About Me</h1>
+           <h1>Greetings</h1>
             <p>
-                The doom that came to Sarnath eats at the roots of the world awaiting its prophesied time when the stars are in their proper place in the heavens and the world is once again ready for their glory.
+                Greetings, my name is Andre Morales and this site was created for the MATC (Mountainland Applied Technology College). The site will be updated
+                throughout the courses and will serve as the location to quickly navigate between development assignments.
                 <a href="#" class="about-me-link">Learn More...</a>
             </p>
         </div>
@@ -41,7 +53,7 @@
         <div class="row">
             <div class="col-sm-12 col-md-4">
                 <!--http://www.cssportal.com/blog/create-corner-ribbon/-->
-                <div class="ribbon"><span>In Progress</span></div>
+                <div class="ribbon"><span>In-Progress</span></div>
                 <div class="badge-container">
                     <img class="img-circle token-badge" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
                 </div>
@@ -51,9 +63,9 @@
                     </div>
                     <div class="panel-body">
                         <div class="list-group">
-                            <a href="#" class="list-group-item">A home page<span class="badge badge-done">Done</span></a>
+                            <a href="#" class="list-group-item">A Home Page<span class="badge badge-done">Done</span></a>
                             <a href="#" class="list-group-item">Portfolio Pag<span class="badge badge-done">Done</span>e</a>
-                            <a href="#" class="list-group-item">Feedback Loop</a>
+                            <a href="#" class="list-group-item" data-toggle="modal" data-target="#myModal">Feedback Loop<span class="badge badge-done">Done</span></a>
                             <a href="#" class="list-group-item">Resume</a>
                             <a href="#" class="list-group-item">About Me Page</a>
                             <a href="#" class="list-group-item">Site Map</a>
@@ -99,6 +111,53 @@
         </div>
 
     </div> <!-- /container -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="form" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="form">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Choose Your Contact Method</h4>
+                </div>
+                <div class="modal-body">
+                    <h5 class="form-heading"><i class="fa fa-envelope fa-2x" aria-hidden="true"></i>Through Snail Mail</h5>
+                    <address>
+                            Andre Morales<br>
+                            1234 Fake Address<br>
+                            Box 564, Disneyland<br>
+                            USA
+                    </address>
+                    <h5 class="form-heading"><i class="fa fa-cloud fa-2x" aria-hidden="true"></i>Through the Power of the Cloud</h5>
+                    <form action="MAILTO:someone@example.com?subject=Let's go on an Adventure" method="post" enctype="text/plain">
+                        <div class="form-group">
+                            <label for="nameForm">Full Name</label>
+                            <input type="text" class="form-control required" id="nameForm" placeholder="Name" required="true" name="nameForm">
+                        </div>
+                        <div class="form-group">
+                            <label for="emailAddress">Email address</label>
+                            <input type="email" class="form-control required" id="emailAddress" placeholder="Email" required="true" name="emailAddress">
+                        </div>
+                        <div class="form-group">
+                            <label for="theirComments">Comments, Concerns, and/or Feelings</label>
+                            <textarea class="form-control" id="theirComments" rows="3" maxlength="140" name="theirComments"></textarea>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="signMeUp" value="Yes"> Send me updates
+                            </label>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary" value="send">Submit</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- End Modal -->
 </section>
 <section id="footer">
     <div class="container">

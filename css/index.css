@@ -159,15 +159,26 @@ body {
     border-color:#F2C25C;
     color:#ffffff;
 }
-.list-group-item {
+a.list-group-item:link {
     background-color: #F2DCA8;
     border-color: #785a35;
 }
-.list-group-item.disabled{
+a.list-group-item.disabled:link{
     color: #F2DCA8;
     background-color: #4a3830 ;
     border-color: #785a35;
 }
+
+a.list-group-item:visited, a.list-group-item.disabled:visited{
+    background-color: #F2DCA8;
+    border-color: #785a35;
+}
+a.list-group-item:hover, a.list-group-item.disabled:hover{
+    color: #F2DCA8;
+    background-color: #4a3830 ;
+    border-color: #785a35;
+}
+
 .list-group-item span.badge-done {
     background-color: #9BC90D;
 }
