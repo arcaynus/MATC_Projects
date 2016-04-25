@@ -1,0 +1,199 @@
+.resume-ribbon {
+    position: relative;
+    margin-top: -25px;
+    margin-bottom: 25px;
+    text-align: center;
+    background: #00ffff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#00ffff), to(#31a1de));
+    background: -webkit-linear-gradient(top, #00ffff, #31a1de);
+    background: -moz-linear-gradient(top, #00ffff, #31a1de);
+    background: -ms-linear-gradient(top, #00ffff, #31a1de);
+    background: -o-linear-gradient(top, #00ffff, #31a1de);
+    background-image: -ms-linear-gradient(top, #00ffff 0%, #31a1de 100%);
+    -webkit-box-shadow: rgba(000,000,000,0.3) 0 0px 0px;
+    -moz-box-shadow: rgba(000,000,000,0.3) 0 0px 0px;
+    box-shadow: rgba(000,000,000,0.3) 0 0px 0px;
+}
+.resume-ribbon h1 {
+    color: #ffffff;
+    text-shadow: #2d4480 0 1px 0;
+    margin:0px;
+    padding: 15px 10px;
+}
+.resume-ribbon:before, .resume-ribbon:after {
+    content: '';
+    position: absolute;
+    display: block;
+    bottom: -1em;
+    border: 1.5em solid #31b5cc;
+    z-index: -1;
+}
+.resume-ribbon:before {
+    left: -2em;
+    border-right-width: 1.5em;
+    border-left-color: transparent;
+    -webkit-box-shadow: rgba(000,000,000,0.4) 0px 0px 0px;
+    -moz-box-shadow: rgba(000,000,000,0.4) 0px 0px 0px;
+    box-shadow: rgba(000,000,000,0.4) 0px 0px 0px;
+}
+.resume-ribbon:after {
+    right: -2em;
+    border-left-width: 1.5em;
+    border-right-color: transparent;
+    -webkit-box-shadow: rgba(000,000,000,0.4) -0px 0px 0px;
+    -moz-box-shadow: rgba(000,000,000,0.4) -0px 0px 0px;
+    box-shadow: rgba(000,000,000,0.4) -0px 0px 0px;
+}
+.resume-ribbon .resume-content:before, .resume-ribbon .resume-ribbon-content:after {
+    border-color: #005469 transparent transparent transparent;
+    position: absolute;
+    display: block;
+    border-style: solid;
+    bottom: -1em;
+    content: '';
+}
+.resume-ribbon .resume-ribbon-content:before {
+    left: 0;
+    border-width: 1em 0 0 1em;
+}
+.resume-ribbon .resume-ribbon-content:after {
+    right: 0;
+    border-width: 1em 1em 0 0;
+}
+#workhistory {
+    position: relative;
+    font-family: 'Quicksand', sans-serif;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 75px;
+    padding-right: 16px;
+    padding-bottom: 75px;
+    background: #7AABFF;
+    background-image: url("http://www.transparenttextures.com/patterns/french-stucco.png");
+    box-shadow: 0 0 5px rgba(0,0,0,.5);
+    z-index: 10;
+}
+#workhistory i.ra, #workhistory i.fa, #education i.ra, #education i.fa {
+    position: relative;
+    left: 0;
+    float: left;
+    top: 25px;
+    color: #3386bb;
+    background: linear-gradient(#224b78 0%, #07072f 100%);
+    padding: .1em;
+    border-radius: 50%;
+    margin-right: 15px;
+    margin-left: -15px;
+    margin-top: -30px;
+    border: solid 6px white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+    z-index: 11;
+}
+#workhistory h2{
+    position: relative;
+    background-color: #A5843F;
+    font-size: 16px;
+    background: linear-gradient(#A5843F 0%, #785a35 100%);
+    border: solid #bb9744 1px;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: -16px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 100px;
+    color: white;
+    text-transform: uppercase;
+    border-top-right-radius:15px;
+    box-shadow: 0 1px 5px rgba(0,0,0,.5);
+    text-shadow: 1px 1px #2f211a;
+    z-index: 0;
+}
+#workhistory .job-container > h3{
+    margin-top: 35px;
+}
+#workhistory .job > div{
+    margin-bottom: 25px;
+}
+.job-container{
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #ffffff;
+    background-color: #94b6f3;
+    margin-left: 0;
+    padding-top: 16px;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-bottom: 16px;
+    box-shadow: 1px 0 5px rgba(0,0,0,.5);
+    border-bottom-right-radius: 4px;
+}
+.job-container ul {
+    padding: 0;
+    margin-left: 10px;
+}
+.job-container ul li{
+    padding-bottom: 10px;
+
+}
+#education {
+    border-top:#315436 solid 4px;
+    background: #826831 url("../images/cave_bg_fg.png") repeat;
+    background-size: 50px 50px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+#education .fa.fa-book {
+    color: #9d9d9d;
+    background: linear-gradient(#5f5f5f 0%, #2f2f2f 100%);
+}
+#education h2{
+    position: relative;
+    font-size: 16px;
+    background-color: #A5843F;
+    background: linear-gradient(#A5843F 0%, #785a35 100%);
+    border: solid #bb9744 1px;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: -16px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 50px;
+    color: white;
+    text-transform: uppercase;
+    border-top-right-radius:15px;
+    box-shadow: 0 1px 5px rgba(0,0,0,.5);
+    text-shadow: 1px 1px #2f211a;
+    z-index: 0;
+}
+#education .school-container > h3{
+    font-size: 16px;
+}
+#education .school .school-container{
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #555;
+    background-color: #F2DCA8;
+    padding-top: 16px;
+    padding-right: 16px;
+    padding-left: 50px;
+    padding-bottom: 16px;
+    box-shadow: 1px 0 5px rgba(0,0,0,.5);
+    border-bottom-right-radius: 4px;
+}
+#education i.ra, #education i.fa, #education i.ra, #education i.fa {
+    position: relative;
+    left: 0;
+    float: left;
+    top: 25px;
+    color: #3386bb;
+    background: linear-gradient(#224b78 0%, #07072f 100%);
+    padding: .1em;
+    border-radius: 50%;
+    margin-right: 15px;
+    margin-left: -15px;
+    margin-top: -30px;
+    border: solid 6px white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+    z-index: 11;
+}
+#education .school > div{
+    margin-bottom: 25px;
+}

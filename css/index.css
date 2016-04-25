@@ -1,20 +1,47 @@
+@media (max-width: 767px){
+    div.navbar-header{
+        display: inline;
+        float:left;
+        position: relative;
+        bottom: 0;
+    }
+    .header-text{
+        display: none;
+    }
+    .navbar-nav>li,.nav>li>a{
+        display: inline;
+        float: right;
+    }
+}
 body {
-    padding-top: 50px;
-    padding-bottom: 30px;
+    padding: 50px 0 0 0;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     background: #222222;
 }
-.navbar-brand .glyphicon {
+.navbar-brand .fa {
     margin-right: .5em;
+}
+nav.cloud {
+    background: #7AABFF;
+    background: linear-gradient(top, #f2f9fe 5%, #9dcaff 100%);
+    background: -webkit-linear-gradient(top, #f2f9fe 5%, #9dcaff 100%);
+    margin: 0;
+
+}
+div.navbar-header.navbar-brand a{
+    color: #264487;
+}
+ul.nav.navbar-right a:hover{
+    background-color: transparent;
 }
 #about-me{
     position: relative;
     font-family: 'Quicksand', sans-serif;
     margin-top: 0;
     margin-bottom: 0;
-    padding-top: 16px;
+    padding-top: 75px;
     padding-right: 16px;
-    padding-bottom: 16px;
+    padding-bottom: 75px;
     background: #7AABFF;
     background-image: url("http://www.transparenttextures.com/patterns/french-stucco.png");
     box-shadow: 0 0 5px rgba(0,0,0,.5);
@@ -44,6 +71,7 @@ body {
     text-transform: uppercase;
     border-top-right-radius:15px;
     box-shadow: 0 1px 5px rgba(0,0,0,.5);
+    text-shadow: 1px 1px #2f211a;
     z-index: 0;
 }
 .about-me-text h1::after {
@@ -56,6 +84,7 @@ body {
     border-bottom: 5px solid transparent;
     border-top: 3px solid #59402c;
     box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+
 }
 .about-me-text p{
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -73,9 +102,11 @@ body {
     color: #1b3044;
 }
 #portfolio {
-    padding-top: 80px;
+    border-top:#315436 solid 4px;
     background: #826831 url("../images/cave_bg_fg.png") repeat;
     background-size: 50px 50px;
+    padding-top: 125px;
+    padding-bottom: 80px;
 }
 .ribbon {
     position: absolute;
@@ -136,7 +167,7 @@ body {
 }
 .token-badge {
     position: absolute;
-    display: block;
+    display: none; /*turn display off since I did not have time to create them*/
     vertical-align: center;
     top: 50%;
     left: 50%;
@@ -150,7 +181,7 @@ body {
     z-index: 2;
     background: #826831 url("../images/cave_bg.png") repeat;
     border-color:#F2C25C;
-    background-size: 50px 50px;;
+    background-size: 50px 50px;
 
 }
 .panel-default > .panel-heading {
@@ -158,21 +189,94 @@ body {
     background: linear-gradient(#A5843F 0%, #785a35 100%);
     border-color:#F2C25C;
     color:#ffffff;
+    text-shadow: 1px 1px #2f211a;
 }
-.list-group-item {
+a.list-group-item:link {
     background-color: #F2DCA8;
     border-color: #785a35;
 }
-.list-group-item.disabled{
+a.list-group-item.disabled:link{
     color: #F2DCA8;
     background-color: #4a3830 ;
     border-color: #785a35;
 }
+
+a.list-group-item:visited, a.list-group-item.disabled:visited{
+    background-color: #F2DCA8;
+    border-color: #785a35;
+}
+a.list-group-item:hover, a.list-group-item.disabled:hover{
+    color: #F2DCA8;
+    background-color: #4a3830 ;
+    border-color: #785a35;
+}
+
 .list-group-item span.badge-done {
     background-color: #9BC90D;
 }
-#footer {
+#sitemap {
+    border-top: solid #4a3830 3px;
     padding-top: 16px;
-    background-color: #222222;
     color: #9d9d9d;
+    background: #222222;
+    background-size: 50px 50px;
+}
+#sitemap a.footer-link {
+    display:block;
+}
+footer .copyright {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    color: #783c00;
+}
+.modal-dialog .modal-content {
+    background: #826831 url("../images/cave_bg.png") repeat;
+    border-color:#F2C25C;
+    background-size: 50px 50px;
+    color:#ffffff;
+}
+.modal-dialog .modal-body {
+    background-color: rgba(34, 34, 34, .7);
+    margin: 5px;
+    border-radius: 10px;
+}
+.modal-dialog .modal-header {
+    background-color:#A5843F;
+    background: linear-gradient(#A5843F 0%, #785a35 100%);
+    border-color:#F2C25C;
+    color:#ffffff;
+    text-shadow: 1px 1px #2f211a;
+}
+.modal-dialog label, address {
+    color: #F2DCA8;
+}
+.modal-dialog .fa {
+    margin-right: 12px;
+    color: #9d9d9d;
+}
+.modal-dialog h5 {
+    font-size: larger;
+    color: #F2DCA8;
+}
+.modal-dialog .fa.fa-cloud{
+    color: #94b6f3;
+}
+.modal-dialog .modal-footer {
+
+    background: linear-gradient(#4a3830 0%, #2f211a 100%);
+    border-color: #785a35;
+    margin-left: -19px;
+    margin-right: -19px;
+    margin-bottom: -19px;
+    border-width: 2px;
+    border-bottom-right-radius: 4px;
+}
+.modal-footer .btn-primary{
+    background-color: #79A70A;
+    border-color: #9BC90D;
+}
+.modal-footer .btn-primary:hover {
+    background-color: #638b0a;
+    border-color: #79A70A;
 }
