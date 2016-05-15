@@ -15,16 +15,25 @@
     margin-left: auto;
     margin-right: auto;
     border-radius: 15px;
+    background: url("../images/project_bg.jpg") 0 0 no-repeat;
 }
-.project-portfolio {
-    background: url("../images/project_portfolio.jpg") 0 0 no-repeat;
+.project-resume span, .project-portfolio span, .project-golf span {
+    font-family: 'Coda', cursive;
+    font-size: 36px;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    line-height: 250px;
+    color: #fff;
+    text-shadow: 1px 1px rgba(0,0,0, .8);
+    width: 250px;
 }
-.project-resume {
-    background: url("../images/project_resume.jpg") 0 0 no-repeat;
+.project-resume span {
+    margin-top: 80px;
+    line-height: 50px;
 }
-.project-golf {
-    background: url("../images/project_golf.jpg") 0 0 no-repeat;
-}
+
 #projects .project-content a:after{
     content: "";
     position: absolute;
