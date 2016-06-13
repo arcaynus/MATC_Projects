@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golf Score Card</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="css/golfCard.css">
+
+</head>
+<body>
+    <div id="container"></div>
+    <div id="overlay-container">
+        <div id="content-div">
+            <div id="golf-banner">
+                <div class="black-bar">
+                    <div class="bar-left">
+                        <div id="golf-logo"></div>
+                        <div id="logo-text">Golf Score Card</div>
+                    </div>
+                    <div class="bar-right">
+                        <button id="find-course-btn" class="btn" data-toggle="modal" data-target="#courseModal"><span class="glyphicon glyphicon-flag"></span> Find Courses</button>
+                    </div>
+                </div>
+                <div id="map"></div>
+                <div id="golf-course-label">Sun River Golf Club</div>
+            </div>
+            <div id="score-card">
+                <div class="table-responsive">
+                    <div class="table">
+                        <table id="display-holes-tbl">
+                            <thead>
+                                <tr id="h-row-display">
+                                    <td id="display-r-all"><input id="r-all" type="radio" name="hole-display-option" value="all" checked><label for="r-all">All</label></td>
+                                    <td id="display-r-front"><input id="r-front" type="radio" name="hole-display-option" value="front"><label for="r-front">Front Nine</label></td>
+                                    <td id="display-r-back"><input id="r-back" type="radio" name="hole-display-option" value="back"><label for="r-back">Back Nine</label></td>
+                                    <td id="display-r-single"><input id="r-single" type="radio" name="hole-display-option" value="single"><label for="r-single">Single</label></td>
+                                </tr>
+                            </thead>
+                        </table>
+                        <table id="score-card-tbl">
+                            <thead>
+                                <tr id="h-row-hole">
+                                    <th id="label-hole" class="header hole">Hole</th>
+                                </tr>
+                                <tr id="h-row-blue">
+                                    <th id="label-blue" class="header blue">Blue</th>
+                                </tr>
+                                <tr id="h-row-white">
+                                    <th id="label-white" class="header white">White</th>
+                                </tr>
+                                <tr id="h-row-red">
+                                    <th id="label-red" class="header red">Red</th>
+                                </tr>
+                                <tr id="h-row-handicap">
+                                    <th id="label-handicap" class="header handicap">Handicap</th>
+                                </tr>
+                                <tr id="h-row-par">
+                                    <th id="label-par" class="header par">Par</th>
+                                </tr>
+                            </thead>
+                            <tbody id="player-rows">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+                <div id="b-row-add-player">
+                    <button id="add-player-btn" data-toggle="modal" data-target="#playerModal" class="btn"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Add Player</button>
+                </div>
+
+                <table id="hole-nav">
+                    <tr>
+                        <td><button id="prev-hole-btn" class="btn"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Prev Hole</button></td>
+                        <td><button id="next-hole-btn" class="btn">Next Hole <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></button></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Player -->
+    <div class="modal fade" id="playerModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Add Player</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal">
+                        <div id="add-input-body" class="form-group">
+                            <label for="new-player-name" class="control-label col-sm-2">Player Name:</label>
+                            <div class="input-group col-sm-10">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                <input id="new-player-name" class="form-control" type="text" maxlength="25" placeholder="Player Name">
+                                <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+                                <span id="inputError2Status" class="sr-only">(error)</span>
+                            </div>
+
+                        </div>
+                        <div id="add-select-body" class="form-group">
+                            <label for="tee-select" class="control-label col-sm-2">Tee:</label>
+                            <div class="input-group col-sm-10">
+                                <select id="tee-select" class="form-control">
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="submit-player-btn" disabled>Add Player</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <!-- Select Course -->
+    <div class="modal fade" id="courseModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Select Course</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <table id="select-course-tbl" class="table table-striped .table-hover col-sm-12">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Course Name</th>
+                                        <th>Phone Number</th>
+                                        <th>Public</th>
+                                        <th>Holes</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button id="select-course-btn" type="button" class="btn btn-primary" disabled>Select</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="../personalPortfolio/js/golfCard.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBluNeqDmmj31_6VdVUy2JPUXvr1MJSlTk" async defer></script>
+
+</body>
+</html>
