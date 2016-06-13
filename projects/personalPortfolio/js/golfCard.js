@@ -1235,7 +1235,7 @@
         navigator.geolocation.getCurrentPosition(function(position){
             pos.latitude = position.coords.latitude;
             pos.longitude =  position.coords.longitude;
-            pos.radius = 20;
+            pos.radius = 30;
             var xhr = $.post("https://golf-courses-api.herokuapp.com/courses/", pos, "json");
             xhr.done(function(data){
                 //console.log(JSON.parse(data));
