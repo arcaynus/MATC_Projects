@@ -1010,16 +1010,13 @@
         $("#total-player" + playerNum).text(GameData.players[playerNum].total());
 
         // Add the badge
+        var tdElement = $("#total-player" + playerNum);
         var badge = $("<span>0</span>");
+        badge.attr("id", "badge-" + playerNum);
         badge.addClass("badge");
-        badge.attr("id", "badge-" + playerData.playerNumber);
-        badge.attr("data-toggle", "tooltip");
-        badge.attr("data-placement", "top");
-        tdElement.append(badge);
-        trElement.append(tdElement);
 
         // update the badge with the offset of par
-        var offset = (GameData.players[playerData.playerNumber].total() - GameData.parTotal());
+        var offset = (GameData.players[playerNum].total() - GameData.parTotal());
 
         // Get the badge for the player total and set the style appropriately
         if(offset < 0){
@@ -1036,7 +1033,8 @@
             badge.attr("title", "Better luck next time");
         }
         badge.tooltip();
-        $("#badge-" + playerData.playerNumber).text(offset);
+        badge.text(offset);
+        tdElement.append(badge);
     }
 
     // holeClick occurs when the user clicks a hole number
