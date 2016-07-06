@@ -529,7 +529,7 @@ function Asteroid() {
     this.rotationDirection = Math.random() > 0.5 ? -1: 1;
     this.rotationSpeed = 0.1;
     this.distanceToShip = 5000; // The distance of the asteroid to the ship since we find this when checking collision we will store it so that we do not have to recalculate it for targeting
-    this.DAMAGETIMEOUT = 300; // the time in milliseconds that the asterpoid can take damage, this prevents the asteroid from dying instantly
+    this.DAMAGETIMEOUT = 200; // the time in milliseconds that the asterpoid can take damage, this prevents the asteroid from dying instantly
     this.damageTimer = null;
 
     // Methods
