@@ -724,7 +724,7 @@
                 tdElement.addClass("player hole-cell " + playerData.teeType);
 
                 //Need to create a input field
-                textInput = $("<input type='number' id='" + "txt-player" + playerData.playerNumber + "-hole" + i + "' placeholder='0' value='" + playerData.scores[i-1] + "'max='99' min='0' maxlength='2' size='2'>");
+                textInput = $("<input type='number' id='" + "txt-player" + playerData.playerNumber + "-hole" + i + "' placeholder='0' value='" + playerData.scores[i-1] + "'max='99' min='0' maxlength='2' asterSize='2'>");
                 textInput.addClass("player-txt-hole");
                 textInput.attr("data-player", playerData.playerNumber);
                 textInput.attr("data-hole", i);
@@ -760,7 +760,7 @@
                 tdElement.addClass("player " + playerData.teeType);
 
                 //Need to create a input field
-                textInput = $("<input type='number' id='" + "txt-player-" + playerData.playerNumber + "-hole" + i + "' placeholder='0' value='" + playerData.scores[i-1] + "' max='99' min='0' maxlength='2' size='2'>");
+                textInput = $("<input type='number' id='" + "txt-player-" + playerData.playerNumber + "-hole" + i + "' placeholder='0' value='" + playerData.scores[i-1] + "' max='99' min='0' maxlength='2' asterSize='2'>");
                 textInput.addClass("player-txt-hole");
                 textInput.attr("data-player", playerData.playerNumber);
                 textInput.attr("data-hole", i);
@@ -788,7 +788,7 @@
             tdElement.addClass("player " + playerData.teeType);
 
             //Need to create a input field
-            textInput = $("<input type='number' id='" + "txt-player-" + playerData.playerNumber + "-hole" + (GameData.currentHole-1) + "' placeholder='0' value='" + playerData.scores[GameData.currentHole-1] + "' max='99' min='0' maxlength='2' size='2'>");
+            textInput = $("<input type='number' id='" + "txt-player-" + playerData.playerNumber + "-hole" + (GameData.currentHole-1) + "' placeholder='0' value='" + playerData.scores[GameData.currentHole-1] + "' max='99' min='0' maxlength='2' asterSize='2'>");
             textInput.addClass("player-txt-hole");
             textInput.attr("data-player", playerData.playerNumber);
             textInput.attr("data-hole", GameData.currentHole);
@@ -1167,7 +1167,7 @@
         GameData.currentHole = holeNum;
     }
 
-    // Set up page hole display based on what the screen size is and what the current hole is
+    // Set up page hole display based on what the screen asterSize is and what the current hole is
     $(window).resize(function(){
         // Get the width =
         var w = $(window).width();
