@@ -1,0 +1,25 @@
+body {
+    background: url("../images/bg.png") repeat;
+}
+canvas{
+    display: block;
+    position: absolute;
+    margin:auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+}
+#canvas{
+    border: 2px solid rgba(80, 247, 49, 0.22);
+}
+#debug {
+    margin-left: 15px;
+    border: 1px solid #50f731;
+    border-radius: 10px;
+    background-color: rgba(76,76,76, .8);
+    color: #ffffff;
+    width: 200px;
+    padding: 15px;
+}

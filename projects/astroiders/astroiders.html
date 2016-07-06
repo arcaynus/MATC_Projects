@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Astroiders</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <script src="js/game.js"></script>
+    <script src="js/spriteBuilder.js"></script>
+    <link rel="stylesheet" href="css/astroiders.css">
+
+</head>
+<body onload="main()">
+<div id="container"><div id="titlesign"></div></div>
+<div id="container2"><div id="backgrondwaves"></div></div>
+<noscript>
+    <p>For full functionality of this page it is necessary to enable JavaScript.
+        Here are the <a href="http://www.enable-javascript.com/" target="_blank">
+            instructions how to enable JavaScript in your web browser</a>.</p>
+</noscript>
+<div id="debug">
+    <h2>Debug Information</h2>
+    <div id="game-data">
+        <h3>Game Data</h3>
+        Score: <span id="score"></span><br>
+        Top Score: <span id="top-score"></span><br>
+        Difficulty: <span id="difficulty"></span>
+    </div>
+    <div id="canvas-info">
+        <h3>Canvas</h3>
+        Canvas Height: <span id="canvas-height"></span><br>
+        Canvas Width: <span id="canvas-width"></span><br>
+    </div>
+    <div id="mouse-info">
+        <h3>Mouse</h3>
+        Mouse X: <span id="mouse-x"></span><br>
+        Mouse Y: <span id="mouse-y"></span><br>
+    </div>
+    <div id="ship-info">
+        <h3>Ship</h3>
+        Ship X: <span id="ship-x"></span><br>
+        Ship Y: <span id="ship-y"></span><br>
+        Ship Anim: <span id="ship-frame"></span><br>
+        Ship velocity: <span id="ship-vel"></span><br>
+        Nearest Asteroid: <span id="ship-nearest-asteroid"></span><br>
+        Total Exhaust Particles: <span id="ship-exhaust-particles"></span><br>
+    </div>
+    <div id="Asteroid-info">
+        <h3>Foreground Asteroids</h3>
+        Total Asteroids: <span id="total-asteroids"></span><br>
+        <ul id="asteroid-list">
+
+        </ul>
+        <h3>Background Asteroids</h3>
+        Total Asteroids: <span id="total-background-asteroids"></span><br>
+        <ul id="background-asteroid-list">
+
+        </ul>
+
+    </div>
+</div>
+</body>
+</html>
