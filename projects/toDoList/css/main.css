@@ -1,0 +1,127 @@
+body {
+    padding-top: 50px;
+    font-family: 'Open Sans', sans-serif;
+}
+nav.navbar.navbar-inverse {
+    margin-bottom: 0;
+    -webkit-box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.65);
+    -moz-box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.65);
+    box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.65);
+}
+.stat-container {
+    background-color: deepskyblue;
+    margin-top: 0;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border: 1px solid #008eab;
+}
+h3.stat-title, .stat-value {
+    color: white;
+    text-shadow: 1px 1px 0 rgba(140,140,140,0.6) , -1px -1px 1px rgba(0,0,0,0.67) ;
+}
+.stat-value {
+    font-family: 'Megrim', cursive;
+    font-size: 20px;
+}
+.about-title {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+.add-list-btn .glyphicon.glyphicon-plus{
+    color: rgb(255, 255, 255);
+}
+li.add-list-btn>a {
+    background-color: rgb(84, 204, 54);
+    color: rgb(255, 255, 255);
+}
+.nav>.add-list-btn>a:hover {
+    background-color: rgb(13, 94, 18);
+    color: rgb(255, 255, 255);
+}
+
+.list-title input{
+    color: rgb(51,122,183);
+}
+.nav-pills{
+    margin-bottom: 20px;
+}
+.task-completed {
+    text-decoration: line-through;
+}
+.task-edit, .task-delete, .list-edit, .list-delete{
+    float: right;
+    padding-left: 10px;
+}
+span.list-delete.glyphicon.glyphicon-remove-sign {
+    font-size: 20px;
+    color: rgb(204, 28, 32);
+}
+span.list-delete.glyphicon.glyphicon-remove-sign:hover {
+    color: rgb(133, 4, 4);
+}
+.panel-heading span.list-delete.glyphicon.glyphicon-remove-sign {
+    line-height: .8;
+    color: rgb(255, 255, 255);
+}
+.panel-heading span.list-delete.glyphicon.glyphicon-remove-sign:hover {
+    color: rgb(23, 47, 76);
+}
+.active span.list-delete.glyphicon.glyphicon-remove-sign {
+    color: rgba(255, 255, 255, 1);
+}
+.active span.list-delete.glyphicon.glyphicon-remove-sign:hover {
+    color: rgb(23, 47, 76);
+}
+.list-edit{
+    padding-right: 10px;
+}
+.list-edit:hover, .list-delete:hover {
+    color: rgb(23, 47, 76);
+}
+.task-edit{
+    padding-right: 10px;
+    color: rgb(84, 204, 54);
+}
+
+.task-edit:hover{
+    color: rgb(26, 68, 17);
+}
+.task-delete{
+    color: rgb(204, 28, 32);
+}
+.task-delete:hover {
+    color: rgb(133, 4, 4);
+}
+.add-task-btn {
+    cursor: pointer;
+    color: rgba(255, 255, 255, 1);
+    background-color: rgb(84, 204, 54);
+
+}
+.add-task-btn:hover{
+    background-color: rgb(26, 68, 17);
+
+}
+/* code from: http://codepen.io/bdsimmons/pen/OPmNxX*/
+.fade-in-out {
+    transition: .25s linear all;
+    -webkit-transition: .25s linear all;
+}
+
+.fade-in-out.ng-enter {
+    opacity: 0;
+}
+
+.fade-in-out.ng-enter.ng-enter-active {
+    opacity: 1;
+}
+
+.fade-in-out.ng-leave {
+    opacity: 1;
+}
+
+.fade-in-out.ng-leave.ng-leave-active {
+    opacity: 0;
+}

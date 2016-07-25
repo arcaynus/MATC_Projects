@@ -1,0 +1,52 @@
+<div class="row" ng-if="$ctrl.list">
+    <div class="panel panel-primary">
+        <!--List Name-->
+        <div class="panel-heading">
+            <h3 class="panel-title list-title">
+                <span ng-show="!$ctrl.list.editing">{{$ctrl.list.listName}}</span>
+                <input ng-model="$ctrl.list.listName" type="text" placeholder="List Name" size="50" ng-show="$ctrl.list.editing" focus-on-show>
+                <!--Delete List Button-->
+                <span class="list-delete glyphicon glyphicon-remove-sign pull-right" ng-click="$ctrl.toDoListService.deleteList($ctrl.list)"></span>
+                <!--Edit List Name Button-->
+                <span class="list-edit glyphicon glyphicon-pencil pull-right" ng-click="$ctrl.list.editing = !$ctrl.list.editing" ng-show="!$ctrl.list.editing"></span>
+                <span class="list-edit glyphicon glyphicon-floppy-disk pull-right" ng-click="$ctrl.list.editing = !$ctrl.list.editing" ng-show="$ctrl.list.editing"></span>
+            </h3>
+
+        </div>
+
+        <!--List's Tasks-->
+        <div class="panel-body">
+            <!--Progress Bar for Tasks-->
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="{{$ctrl.toDoListService.completedTaskPercent($ctrl.list)}} +'%'" aria-valuemin="0" aria-valuemax="100" style="min-width: 4em; width: {{$ctrl.toDoListService.completedTaskPercent($ctrl.list)}}%">
+                    {{$ctrl.toDoListService.completedTaskPercent($ctrl.list)}} %
+                </div>
+            </div>
+            <!--For each task do the following-->
+            <ul class="list-group">
+                <li ng-repeat="task in $ctrl.list.taskList" class="list-group-item fade-in-out">
+                    <!--Checkbox for Done-->
+                    <input type="checkbox" ng-checked="task.completedDate != null" ng-click="$ctrl.toDoListService.completeTask(task)">
+                    <!--Task Input for Name-->
+                    <span class="task-name" ng-class="{'task-completed': task.completedDate != null}" ng-show="!task.editing" ng-click="$ctrl.toDoListService.turnOffEditForAllTasks(); task.editing = true;">{{task.taskName }}</span>
+                    <input ng-model="task.taskName" type="text" placeholder="Task Name" size="50" ng-show="task.editing" focus-on-show>
+                    <!--Delete Button-->
+                    <span class="task-delete glyphicon glyphicon-remove-sign" ng-click="$ctrl.toDoListService.deleteTask($index)"></span>
+                    <!--Edit Button-->
+                    <span class="task-edit glyphicon glyphicon-pencil" ng-click="$ctrl.toDoListService.turnOffEditForAllTasks(); task.editing = !task.editing;" ng-show="!task.editing"></span>
+                    <span class="task-edit glyphicon glyphicon-floppy-disk" ng-click="task.editing = !task.editing" ng-show="task.editing"></span>
+                </li>
+            </ul>
+            <div class="clear-task-link text-center">
+                <a href="#" ng-click="$ctrl.toDoListService.clearCompletedTasks()">Clear Completed Tasks</a>
+            </div>
+        </div>
+
+        <!--Add Task button-->
+        <div class="panel-footer text-center add-task-btn" ng-click="$ctrl.toDoListService.addTask($ctrl.list)">
+            <span class="glyphicon glyphicon-plus"></span>Add Task
+        </div>
+    </div>
+
+
+</div>
