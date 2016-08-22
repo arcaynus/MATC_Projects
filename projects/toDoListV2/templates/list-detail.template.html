@@ -1,0 +1,79 @@
+<toaster-container toaster-options="{'time-out': 2000, 'close-button':true, 'animation-class': 'toast-top-center'}"></toaster-container>
+<div class="row" ng-if="$ctrl.list">
+    <div class="panel panel-primary">
+        <!--List Name-->
+        <div class="panel-heading">
+            <h3 class="panel-title list-title">
+                <form name="list_name_form" novalidate>
+                    <div class="form-group" ng-class="{ 'has-error': list_name_form.listName.$invalid }">
+                        <div class="row">
+                            <div class="col-sm-10">
+                                <span ng-show="!$ctrl.list.editing">{{$ctrl.list.listName | capitalize}}</span>
+                                <label class="sr-only" for="listName">List Name</label>
+                                <input class="form-control" id="listName" name="listName" ng-model="$ctrl.list.listName"  type="text" placeholder="List Name" size="50" ng-show="$ctrl.list.editing" focus-on-show required>
+                                <!--Validation Message-->
+                                <span ng-show="list_name_form.listName.$invalid && list_name_form.listName.$dirty">List name is required.</span>
+                            </div>
+                            <div class="col-sm-2">
+                                <!--Delete List Button-->
+                                <span class="list-delete glyphicon glyphicon-remove-sign pull-right" ng-click="$ctrl.toDoListService.deleteList($ctrl.list)"></span>
+                                <!--Edit List Name Button-->
+                                <span class="list-edit glyphicon glyphicon-pencil pull-right" ng-click="$ctrl.list.editing = !$ctrl.list.editing" ng-show="!$ctrl.list.editing"></span>
+                                <span class="list-edit glyphicon glyphicon-floppy-disk pull-right" ng-click="$ctrl.list.editing = !$ctrl.list.editing; $ctrl.pop('success', 'List Updated', 'List Name Updated');" ng-show="$ctrl.list.editing && list_name_form.listName.$valid"></span>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </h3>
+
+        </div>
+
+        <!--List's Tasks-->
+        <div class="panel-body">
+            <!--Progress Bar for Tasks-->
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="{{$ctrl.toDoListService.completedTaskPercent($ctrl.list)}} +'%'" aria-valuemin="0" aria-valuemax="100" style="min-width: 4em; width: {{$ctrl.toDoListService.completedTaskPercent($ctrl.list)}}%">
+                    {{$ctrl.toDoListService.completedTaskPercent($ctrl.list)}} %
+                </div>
+            </div>
+            <!--For each task do the following-->
+            <ul class="list-group">
+                <form name="task_list" class="form-inline" novalidate>
+                    <li ng-repeat="task in $ctrl.list.taskList" class="list-group-item fade-in-out">
+                        <div class="row">
+                            <div class="col-sm-10">
+                                <div class="checkbox">
+                                    <!--Checkbox for Done-->
+                                    <input type="checkbox" ng-checked="task.completedDate != null" ng-click="$ctrl.toDoListService.completeTask(task)">
+                                </div>
+                                <div class="form-group" ng-class="{ 'has-error': task_list['task_' + $index].$invalid && task_list['task_' + $index].$dirty }">
+                                    <!--Task Input for Name-->
+                                    <span class="task-name" ng-class="{'task-completed': task.completedDate != null}" ng-show="!task.editing" ng-click="$ctrl.toDoListService.turnOffEditForAllTasks(); task.editing = true;">{{task.taskName | capitalize}}</span>
+                                    <input name="task_{{$index}}"class="form-control" ng-model="task.taskName" type="text" placeholder="Task Name" size="50" ng-show="task.editing" focus-on-show required>
+                                    <span ng-show="task_list['task_' + $index].$invalid && task_list['task_' + $index].$dirty" class="error-message">Task name is required.</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <!--Delete Button-->
+                                <span class="task-delete glyphicon glyphicon-remove-sign" ng-click="$ctrl.toDoListService.deleteTask($index)"></span>
+                                <!--Edit Button-->
+                                <span class="task-edit glyphicon glyphicon-pencil" ng-click="$ctrl.toDoListService.turnOffEditForAllTasks(); task.editing = !task.editing;" ng-show="!task.editing"></span>
+                                <span class="task-edit glyphicon glyphicon-floppy-disk" ng-click="task.editing = !task.editing; $ctrl.pop('success', 'Task', 'Task Updated');" ng-show="task_list['task_' + $index].$valid && task.editing"></span>
+                            </div>
+                        </div>
+                    </li>
+                </form>
+            </ul>
+            <div class="clear-task-link text-center">
+                <a href="#" ng-click="$ctrl.toDoListService.clearCompletedTasks()">Clear Completed Tasks</a>
+            </div>
+        </div>
+
+        <!--Add Task button-->
+        <div class="panel-footer text-center add-task-btn" ng-class="{'disabled-btn': task_list.$invalid}" ng-click="task_list.$invalid || $ctrl.toDoListService.addTask($ctrl.list)">
+            <span class="glyphicon glyphicon-plus"></span>Add Task
+        </div>
+    </div>
+
+
+</div>

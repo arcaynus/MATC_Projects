@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row">
+        <ul class="nav nav-pills">
+            <li class="presentation add-list-btn" ng-click="$ctrl.toDoListService.createList()"><a href="#"><span class="glyphicon glyphicon-plus"></span>New List</a></li>
+            <li class="presentation" ng-repeat="list in $ctrl.toDoListService.toDoList" ng-class="{active: $ctrl.toDoListService.selectedList === list}">
+                <a ng-click="$ctrl.toDoListService.selectList(list)">
+                    {{list.listName | capitalize}}
+                    <span class="badge">{{list.taskList.length}}</span>
+                    <!--Delete List Button-->
+                    <span class="list-delete glyphicon glyphicon-remove-sign" ng-click="$ctrl.toDoListService.deleteList(list)"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <list-detail selected-list="$ctrl.toDoListService.selectedList"></list-detail>
+
+</div>

@@ -1,0 +1,17 @@
+<div class="container stat-container">
+    <div class="row">
+        <div class="col-xs-6 text-center">
+            <h3 class="stat-title">Lists Completed:</h3>
+            <span class="stat-list-completed stat-value">{{$ctrl.toDoListService.getStatistics().totalNumCompLists}}</span>
+            <span class="stat-value"> / </span>
+            <span class="stat-list-total stat-value">{{$ctrl.toDoListService.getStatistics().totalNumLists}}</span>
+
+        </div>
+        <div class="col-xs-6 text-center ">
+            <h3 class="stat-title">Tasks Completed:</h3>
+            <span class="stat-tasks-completed stat-value">{{$ctrl.toDoListService.getStatistics().totalNumCompTasks}}</span>
+            <span class="stat-value"> / </span>
+            <span class="stat-tasks-total stat-value">{{$ctrl.toDoListService.getStatistics().totalNumTasks}}</span>
+        </div>
+    </div>
+</div>

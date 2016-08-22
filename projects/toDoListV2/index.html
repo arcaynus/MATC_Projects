@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="toDoApp">
+<head>
+    <meta charset="UTF-8">
+    <title>ToDo App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Megrim|Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/2.0.0/toaster.css" rel="stylesheet" />
+</head>
+<body>
+    <!--Title/Nav Bar-->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">-
+            <div class="navbar-header navbar-left">
+                <a class="navbar-brand" ui-sref="main">ToDo App</a>
+            </div>
+            <!--<form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+            </form>-->
+            <ul class="nav navbar-nav">
+                <li><a ui-sref="about">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--Status Bar-->
+    <list-status-bar></list-status-bar>
+
+    <!--To Do List-->
+    <ui-view></ui-view>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-animate.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.11/ngStorage.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.0.0/ui-bootstrap-tpls.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/2.0.0/toaster.js"></script>
+    <!-- app.js must be FIRST, since the component is added to it -->
+    <script src="app.js"></script>
+    <script src="js/filters/capitalize.filter.js"></script>
+    <script src="js/components/to-do-list.component.js"></script>
+    <script src="js/components/list-detail.component.js"></script>
+    <script src="js/components/about.component.js"></script>
+    <script src="js/components/list-status-bar.component.js"></script>
+    <script src="js/directives/focus-on-show.directive.js"></script>
+    <script src="js/services/toDoList.service.js"></script>
+
+
+</body>
+
+
+</html>
